@@ -25,13 +25,13 @@ const update = e => {
         e.target.value = 0
     }
 
-    tri_saldos_input.value = parseFloat(mes_1_saldo_input.value) + parseFloat(mes_2_saldo_input.value) + parseFloat(mes_3_saldo_input.value)
+    tri_saldos_input.value = ((parseFloat(mes_1_saldo_input.value) + parseFloat(mes_2_saldo_input.value) + parseFloat(mes_3_saldo_input.value)) / 3).toFixed(2)
 
-    tri_depositos_input.value = parseFloat(mes_1_depositos_input.value) + parseFloat(mes_2_depositos_input.value) + parseFloat(mes_3_depositos_input.value)
+    tri_depositos_input.value = ((parseFloat(mes_1_depositos_input.value) + parseFloat(mes_2_depositos_input.value) + parseFloat(mes_3_depositos_input.value)) / 3).toFixed(2)
 
-    tri_retiros_input.value = parseFloat(mes_1_retiros_input.value) + parseFloat(mes_2_retiros_input.value) + parseFloat(mes_3_retiros_input.value)
+    tri_retiros_input.value = ((parseFloat(mes_1_retiros_input.value) + parseFloat(mes_2_retiros_input.value) + parseFloat(mes_3_retiros_input.value)) / 3).toFixed(2)
 
-    saldos_pago_input.value = parseFloat(tri_saldos_input.value) - parseFloat(pago_mensual_buro_input.value)
+    saldos_pago_input.value = (parseFloat(tri_saldos_input.value) - parseFloat(pago_mensual_buro_input.value)).toFixed(2)
 }
 
 mes_1_saldo_input.addEventListener('change', update)
