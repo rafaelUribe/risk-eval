@@ -1,3 +1,5 @@
+const renta = document.getElementById('renta')
+
 const mes_1_saldo_input = document.getElementById('mes-1-saldo')
 const mes_1_depositos_input = document.getElementById('mes-1-depositos')
 const mes_1_retiros_input = document.getElementById('mes-1-retiros')
@@ -32,7 +34,11 @@ const update = e => {
     tri_retiros_input.value = ((parseFloat(mes_1_retiros_input.value) + parseFloat(mes_2_retiros_input.value) + parseFloat(mes_3_retiros_input.value)) / 3).toFixed(2)
 
     saldos_pago_input.value = (parseFloat(tri_saldos_input.value) - parseFloat(pago_mensual_buro_input.value)).toFixed(2)
+
+    saldos_pago_renta_input.value = (parseFloat(saldos_pago_input.value) - parseFloat(renta.value)).toFixed(2)
 }
+
+renta.addEventListener('change', update)
 
 mes_1_saldo_input.addEventListener('change', update)
 mes_1_depositos_input.addEventListener('change', update)
